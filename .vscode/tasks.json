@@ -1,0 +1,75 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install Vitest and Testing Libraries",
+			"type": "shell",
+			"command": "npm install --save-dev vitest @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Vitest Unit Tests",
+			"type": "shell",
+			"command": "npx vitest run --coverage",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Vitest Unit Tests (2nd run)",
+			"type": "shell",
+			"command": "npx vitest run --coverage",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Vitest with Coverage",
+			"type": "shell",
+			"command": "npx vitest run --coverage",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Vitest with Coverage",
+			"type": "shell",
+			"command": "npx vitest run --coverage",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Re-run Vitest with Coverage after fixing exports",
+			"type": "shell",
+			"command": "npx vitest run --coverage",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Vitest Tests (no coverage) for Debugging",
+			"type": "shell",
+			"command": "npx vitest run",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Vitest Single Test: AddWardModal",
+			"type": "shell",
+			"command": "npx vitest run src/__tests__/modules/water-tax/water-master/modals/AddWardModal.test.tsx",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Vitest Single Test: AddWardModal (relative import)",
+			"type": "shell",
+			"command": "npx vitest run src/__tests__/modules/water-tax/water-master/modals/AddWardModal.test.tsx",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run All Vitest Tests",
+			"type": "shell",
+			"command": "npx vitest run",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

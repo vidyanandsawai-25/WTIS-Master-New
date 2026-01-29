@@ -1,0 +1,373 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #18181b;
+  --radius: 0.5rem;
+
+  /* Government & Header Colors (Light Mode) */
+  --gov-blue: #1e40af;
+  --gov-green: #059669;
+  --gov-gold: #d97706;
+  --gov-slate: #475569;
+  --header-from: #1e40af;
+  --header-via: #1e3a8a;
+  --header-to: #1e293b;
+
+  /* Department Colors */
+  --dept-common: #64748b;
+  --dept-property: #1e40af;
+  --dept-water: #0891b2;
+  --dept-trade: #059669;
+  --dept-building: #7c3aed;
+  --dept-birth: #e11d48;
+  --dept-asset: #d97706;
+  --dept-user: #4f46e5;
+  --dept-system: #8b5cf6;
+  --dept-config: #6b7280;
+  --dept-ulb: #1e40af;
+
+  /* Chart & Sidebar */
+  --chart-1: #1e40af;
+  --chart-2: #059669;
+  --chart-3: #7c3aed;
+  --chart-4: #d97706;
+  --chart-5: #dc2626;
+  --sidebar: #0f172a;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #fff;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #1e293b;
+  --sidebar-ring: #3b82f6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #09090b;
+    --foreground: #fafafa;
+    --card: #09090b;
+    --card-foreground: #fafafa;
+    --popover: #09090b;
+    --popover-foreground: #fafafa;
+    --primary: #fafafa;
+    --primary-foreground: #18181b;
+    --secondary: #27272a;
+    --secondary-foreground: #fafafa;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #27272a;
+    --accent-foreground: #fafafa;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #fafafa;
+    --border: #27272a;
+    --input: #27272a;
+    --ring: #d4d4d8;
+
+    /* Government & Header Colors (Dark Mode) */
+    --gov-blue: #3b82f6;
+    --gov-green: #10b981;
+    --gov-gold: #f59e0b;
+    --gov-slate: #64748b;
+    --header-from: #1e3a8a;
+    --header-via: #1e293b;
+    --header-to: #0f172a;
+    --dept-common: #94a3b8;
+    --dept-property: #3b82f6;
+    --dept-water: #06b6d4;
+    --dept-trade: #10b981;
+    --dept-building: #a78bfa;
+    --dept-birth: #fb7185;
+    --dept-asset: #f59e0b;
+    --dept-user: #818cf8;
+    --dept-system: #a78bfa;
+    --dept-config: #9ca3af;
+    --dept-ulb: #3b82f6;
+
+    /* Chart & Sidebar (Dark Mode) */
+    --chart-1: #60a5fa;
+    --chart-2: #34d399;
+    --chart-3: #a78bfa;
+    --chart-4: #fbbf24;
+    --chart-5: #f87171;
+    --sidebar: #050a14;
+    --sidebar-foreground: #f1f5f9;
+    --sidebar-primary: #3b82f6;
+    --sidebar-primary-foreground: #fff;
+    --sidebar-accent: #1a2332;
+    --sidebar-accent-foreground: #f1f5f9;
+    --sidebar-border: #1a2332;
+    --sidebar-ring: #60a5fa;
+  }
+}
+
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========== ANIMATIONS ========== */
+
+/* Header slide-down */
+.animate-header-slide-down {
+  animation: header-slide-down 0.6s ease-out;
+}
+
+@keyframes header-slide-down {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Background gradient flow */
+.animate-gradient-flow {
+  background-size: 200% 200%;
+  animation: gradient-flow 14s ease infinite;
+}
+
+@keyframes gradient-flow {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Floating particles */
+.animate-particle-float {
+  animation: particle-float 6s ease-in-out infinite;
+}
+
+@keyframes particle-float {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-12px) translateX(6px);
+  }
+}
+
+.animate-particle-float-slow {
+  animation: particle-float-slow 10s ease-in-out infinite;
+}
+
+@keyframes particle-float-slow {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+
+  50% {
+    transform: translateY(-18px) translateX(-10px);
+  }
+}
+
+/* Logo pendulum + rotation */
+.animate-pendulum {
+  animation: pendulum 4s ease-in-out infinite;
+}
+
+@keyframes pendulum {
+
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-logo-rotate {
+  animation: logo-rotate 24s linear infinite;
+}
+
+@keyframes logo-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Title glow */
+.animate-title-glow {
+  animation: title-glow 3s ease-in-out infinite;
+}
+
+@keyframes title-glow {
+
+  0%,
+  100% {
+    text-shadow: 0 0 8px rgba(250, 204, 21, 0);
+  }
+
+  50% {
+    text-shadow: 0 0 14px rgba(250, 204, 21, 0.9);
+  }
+}
+
+/* Slide in left/right */
+.animate-slide-in-left {
+  animation: slide-in-left 0.5s ease-out;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.5s ease-out;
+}
+
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Dropdown animation */
+.animate-dropdown {
+  animation: dropdown 0.25s ease-out forwards;
+  transform-origin: top right;
+}
+
+@keyframes dropdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ========== SCROLLBAR HIDE FOR INNER CONTENT ========== */
+
+/* Chrome, Edge, Safari */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Layout Utilities */
+@media (min-width: 1024px) {
+  .sidebar-expanded main {
+    padding-left: 16rem !important;
+  }
+}
+
+/* Custom Utilities */
+.bg-grid-white {
+  background-image: linear-gradient(to right, #ffffff0d 1px, #0000 1px), linear-gradient(#ffffff0d 1px, #0000 1px);
+  background-size: 20px 20px;
+}
+
+.bg-grid-slate {
+  background-image: linear-gradient(to right, #94a3b80d 1px, #0000 1px), linear-gradient(#94a3b80d 1px, #0000 1px);
+  background-size: 32px 32px;
+}

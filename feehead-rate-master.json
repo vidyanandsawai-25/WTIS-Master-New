@@ -1,0 +1,24 @@
+﻿
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : {"items":[{"feeHeadRateID":2,"feeHeadID":2,"feeHeadDescription":"इन्स्पेक्शन फी","connectionTypeID":1,"connection
+                    TypeDescription":"मीटर","connectionCategoryID":2,"connectionCategoryDescription":"निवास...
+RawContent        : HTTP/1.1 200 OK
+                    Transfer-Encoding: chunked
+                    Content-Type: application/json; charset=utf-8
+                    Date: Wed, 28 Jan 2026 10:52:29 GMT
+                    Server: Kestrel
+                    
+                    {"items":[{"feeHeadRateID":2,"feeHeadID":2,"feeHeadD...
+Forms             : {}
+Headers           : {[Transfer-Encoding, chunked], [Content-Type, application/json; charset=utf-8], [Date, Wed, 28 Jan 2026 10:52:29 
+                    GMT], [Server, Kestrel]}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : mshtml.HTMLDocumentClass
+RawContentLength  : 2753
+
+
+
